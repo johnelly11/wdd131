@@ -1,0 +1,41 @@
+
+.content {
+    border: 1px solid black;
+    padding: 40px;
+    margin: 20px;
+    max-width: 700px;
+    display: grid;
+    justify-content: center;
+    line-height: 1.5;
+}
+.text {
+    max-width: 600px;
+}
+p, h2, li{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h1 {
+    letter-spacing: 3px;
+    font-size: 45px;
+    margin-bottom: 0;
+}
+h2 {
+    color: #006eb6;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+}
+h1, h2, content {
+    text-align: center;
+}
+img {
+    width: 150px;
+    margin-top: 30px;
+}
+footer {
+    text-align: center;
+}
+h1, h2 {
+    text-transform: uppercase;
+}
