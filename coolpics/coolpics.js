@@ -67,3 +67,7 @@ function closeViewer() {
 
 
 document.querySelector(".gallery").addEventListener("click", viewHandler);
+
+
+
+
