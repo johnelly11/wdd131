@@ -10,7 +10,7 @@ header h1 {
     background-color: slategrey;
     margin: 0;
     padding: 2rem;
-    color: gainsboro;
+    color: #f5f5f5;
     font-size: 4rem;
 }
 
@@ -30,7 +30,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: slategray;
-    color: gainsboro
+    color: #f5f5f5
     
 }
 
@@ -48,7 +48,7 @@ a {
 
 .rating {
     text-align: right;
-    border-right: 2px solid gainsboro;
+    border-right: 2px solid #f5f5f5;
     padding: 1rem;
     
 
