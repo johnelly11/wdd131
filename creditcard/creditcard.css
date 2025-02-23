@@ -1,0 +1,103 @@
+
+body {
+    background-color: burlywood;
+}
+
+
+form {
+    position: relative;
+    height: 100vh;
+}
+
+.card {
+    height: 13rem;
+    width: 22rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+    position: absolute;
+}
+
+#card-front {
+    background-color: slategray;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#card-front img {
+    padding-left: 4rem;
+    padding-top: 1rem;
+}
+
+#card-back {
+    background-color: aliceblue;
+    top: 4rem;
+    left: 8rem;
+    z-index: 1;
+}
+
+#card-back hr {
+    margin-top: 0.7rem;
+    border: 1.5rem solid black;
+}
+
+form button {
+    position: absolute;
+    top: 20rem;
+    left: 27rem;
+    height: 2rem;
+    width: 5rem;
+}
+
+
+#cvc {
+    margin-top: 5rem;
+    margin-left: 16rem;
+}
+
+#cvc input {
+    text-align: center;
+    width: 2rem;
+    margin-left: 1rem;
+}
+
+#cvc, #card-number, #card-holder {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+#total {
+    grid-column: 1;
+    grid-row: 1;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+#card-number {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding-left: 1rem;
+
+}
+
+#card-holder {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    padding-left: 1rem;
+}
+
+
+#expiration {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    text-align: center;
+}
+#expiration input {
+    width: 2rem;
+    text-align: center;
+}
