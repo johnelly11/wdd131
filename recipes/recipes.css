@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=family=Amatic+SC&display=swap");
+:root {
+--primary-color: #1B98E0;
+--secondary-color: #59c3c3;
+--text-dark: #333;
+--text-light: #ebebeb;
+--primary-font: Arial, Helvetica,sans-serif;
+--secondary-font: "Amatic SC";
+}
+
+
+
+img {
+	max-width: 100%;
+}
+
+
+.recipe-view {
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+
+
+
+#hidden {
+    display: none;
+}
