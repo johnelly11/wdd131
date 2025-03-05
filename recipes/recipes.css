@@ -8,23 +8,110 @@
 --secondary-font: "Amatic SC";
 }
 
-
+body {
+    margin: 0;
+}
 
 img {
 	max-width: 100%;
 }
 
 
+
 .recipe-view {
     border: 2px solid black;
     border-radius: 0.5rem;
-    margin: 2rem;
-    padding: 1rem;
+    margin: 3rem;
+    padding: 2rem;
+}
+
+.recipe-view img {
+    max-height: 20rem;
+    border-radius: 0.2rem;
+
+}
+
+.recipe-image {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-tags-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+}
+.recipe-tags {
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+#hidden {
+    display: none;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+#title img {
+    width: 5rem;
+    height: 5rem;
+    padding-top: 1.5rem;
+}
+
+
+#recipe-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+#recipe-search button {
+    width: 2rem;
+    height: 1.9rem;
+}
+
+#recipe-search input {
+    height: 1.5rem;
+    width: 55%;
+}
+
+.recipe-rating {
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
 }
 
 
 
 
-#hidden {
-    display: none;
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.social img {
+    height: 4rem;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 700px) {
+    #hidden {
+        display: contents;
+    }
+
+
 }
