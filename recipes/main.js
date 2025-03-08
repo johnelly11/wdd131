@@ -43,7 +43,7 @@ function createArticles(recipes) {
         const html = `
             <div class="recipe-view">
                 <div class="recipe-image">
-                    <img src="${recipes.image}"></img>
+                    <img src="${recipes.image}" alt="image of ${recipes.name}"></img>
                 </div>
                 <div class="inner-recipe-view">
                     <div class="recipe-tags-container">
@@ -52,11 +52,11 @@ function createArticles(recipes) {
                     <div class="recipe-title">
                         <h2>${recipes.name}</h2>
                     </div>
-                    <div class="recipe-rating">
+                    <div class="recipe-rating" aria-hidden="true">
                         <p>${starRating(recipes.rating)}</p>
                     </div>
 
-                    <div id="hidden">
+                    <div class="hidden">
                         <div class="recipe-description">
                             <p>${recipes.description}</p>
                         </div>

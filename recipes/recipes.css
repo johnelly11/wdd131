@@ -10,6 +10,7 @@
 
 body {
     margin: 0;
+    background-color: slategrey;
 }
 
 img {
@@ -21,8 +22,9 @@ img {
 .recipe-view {
     border: 2px solid black;
     border-radius: 0.5rem;
-    margin: 3rem;
-    padding: 2rem;
+    margin: 3rem 1rem;
+    padding: 1rem;
+    background-color: aliceblue;
 }
 
 .recipe-view img {
@@ -39,17 +41,17 @@ img {
 .recipe-tags-container {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 0.5rem;
 
 }
 .recipe-tags {
     border: 2px solid black;
     border-radius: 0.5rem;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     font-size: 1rem;
 }
 
-#hidden {
+.hidden {
     display: none;
 }
 
@@ -96,6 +98,7 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: end;
+    margin-right: 1rem;
 }
 
 .social img {
@@ -103,15 +106,34 @@ img {
 }
 
 
+footer a {
+    font-size: 0.6em;
+    color: black;
+}
 
 
 
 
-
-@media screen and (min-width: 700px) {
-    #hidden {
+@media screen and (min-width: 600px) {
+    .hidden {
         display: contents;
     }
 
+    .recipe-view {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 3rem;
+        padding: 2rem;
+    }
 
+
+
+}
+
+
+@media screen and (min-width: 960px) {
+    .recipe-view {
+        margin: 3rem 15rem;
+    }
 }
