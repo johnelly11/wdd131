@@ -36,9 +36,9 @@ function starRating(rating) {
   return stars;
 }
 
-function createArticles(recipesToRender) { //take in a parameter of recipes to render
+function createArticles(recipesToRender) {
   const container = document.getElementById("recipes-view");
-  container.innerHTML = ""; // Clear existing content
+  container.innerHTML = "";
 
   recipesToRender.forEach((recipe) => {
     const recipesDiv = document.createElement("div");
