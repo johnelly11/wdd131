@@ -1,73 +1,118 @@
-import {recipes} from "./recipes.mjs"
+import { recipes } from "./recipes.mjs";
 
+function randomNumber(range) {
+  return Math.floor(Math.random() * range);
+}
 
+function init() {
+    const shuffledRecipes = [...recipes];
+    for (let i = shuffledRecipes.length - 1; i > 0; i--) {
+      const j = randomNumber(i + 1);
+      [shuffledRecipes[i], shuffledRecipes[j]] = [shuffledRecipes[j], shuffledRecipes[i]];
+    }
+    createArticles(shuffledRecipes);
+  }
+  
+init();
 
 function starRating(rating) {
-    let stars = "";
-    const fullStars = Math.floor(rating);
-    const halfStarCheck = rating % 1 === 0.5;
+  let stars = "";
+  const fullStars = Math.floor(rating);
+  const halfStarCheck = rating % 1 === 0.5;
 
-    let i = 0;
-    for (i; i < fullStars; i++) {
-        stars += "★";
-    }
+  let i = 0;
+  for (i; i < fullStars; i++) {
+    stars += "★";
+  }
 
-    if (halfStarCheck) {
-        stars += "⯪";
-    }
+  if (halfStarCheck) {
+    stars += "⯪";
+  }
 
-    while (stars.length < 5) {
-        stars += "☆";
-    }
+  while (stars.length < 5) {
+    stars += "☆";
+  }
 
-    return stars;
+  return stars;
 }
 
+function createArticles(recipesToRender) { //take in a parameter of recipes to render
+  const container = document.getElementById("recipes-view");
+  container.innerHTML = ""; // Clear existing content
 
-function createArticles(recipes) {
-    const container = document.getElementById("recipes-view");
-    recipes.forEach(recipes => {
-        const recipesDiv = document.createElement("div");
+  recipesToRender.forEach((recipe) => {
+    const recipesDiv = document.createElement("div");
 
-        let tags = "";
-        recipes.tags.forEach((tag) => {
-            tags += `
-            <div class="recipe-tags">
-                <p>${tag}</p>
-            </div>
-            `;
-        });
-
-        
-
-        const html = `
-            <div class="recipe-view">
-                <div class="recipe-image">
-                    <img src="${recipes.image}" alt="image of ${recipes.name}"></img>
-                </div>
-                <div class="inner-recipe-view">
-                    <div class="recipe-tags-container">
-                        ${tags}
-                    </div>
-                    <div class="recipe-title">
-                        <h2>${recipes.name}</h2>
-                    </div>
-                    <div class="recipe-rating" aria-hidden="true">
-                        <p>${starRating(recipes.rating)}</p>
-                    </div>
-
-                    <div class="hidden">
-                        <div class="recipe-description">
-                            <p>${recipes.description}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        recipesDiv.innerHTML = html;
-        container.appendChild(recipesDiv);
+    let tags = "";
+    recipe.tags.forEach((tag) => {
+      tags += `
+        <div class="recipe-tags">
+          <p>${tag}</p>
+        </div>
+      `;
     });
+
+    const html = `
+      <div class="recipe-view">
+        <div class="recipe-image">
+          <img src="${recipe.image}" alt="image of ${recipe.name}"></img>
+        </div>
+        <div class="inner-recipe-view">
+          <div class="recipe-tags-container">
+            ${tags}
+          </div>
+          <div class="recipe-title">
+            <h2>${recipe.name}</h2>
+          </div>
+          <div class="recipe-rating" aria-hidden="true">
+            <p>${starRating(recipe.rating)}</p>
+          </div>
+
+          <div class="hidden">
+            <div class="recipe-description">
+              <p>${recipe.description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    recipesDiv.innerHTML = html;
+    container.appendChild(recipesDiv);
+  });
 }
 
-createArticles(recipes);
+function searchRecipes(searchValue) {
+  const lowerSearchValue = searchValue.toLowerCase();
+  const filteredRecipes = recipes.filter((recipe) => {
+    const lowerName = recipe.name.toLowerCase();
+    const lowerDescription = recipe.description.toLowerCase();
+    const lowerTags = recipe.tags.map((tag) => tag.toLowerCase());
+
+    if (lowerName.includes(lowerSearchValue)) {
+      return true;
+    }
+    if (lowerDescription.includes(lowerSearchValue)) {
+      return true;
+    }
+    if (lowerTags.some((tag) => tag.includes(lowerSearchValue))) {
+      return true;
+    }
+    return false;
+  });
+
+  createArticles(filteredRecipes);
+}
+
+
+
+
+const searchButton = document.getElementById("search-button");
+const findRecipe = document.getElementById("find-recipe");
+
+if (searchButton && findRecipe) {
+  searchButton.addEventListener("click", () => {
+    const searchValue = findRecipe.value;
+    searchRecipes(searchValue);
+  });
+}
