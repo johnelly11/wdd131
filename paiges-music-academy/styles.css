@@ -20,10 +20,14 @@ h1, h2, h3 {
     font-family: var(--heading-font);
 }
 
+p {
+    font-size: medium;
+}
+
 #nav-box {
     display: flex;
     justify-content: center;
-    gap: 5rem;
+    gap: 15%;
     margin-bottom: 1rem;
 }
 
@@ -43,8 +47,10 @@ hr {
     margin: 0;
     border: 1px solid var(--color1);
     width: 70%;
-    justify-self: center;
-    
+}
+#hr-box {
+    display: flex;
+    justify-content: center;
 }
 
 #title-box {
@@ -74,14 +80,14 @@ footer p {
 }
 
 .courses-view img {
-    width: 23rem;
-    height: 15rem;
+    width: 80%;
+
     border-radius: 0.2rem;
 
 }
 
 .inner-courses-view {
-    margin: 1rem;
+    margin: 0.5rem 0.5rem;
 
 }
 
@@ -120,6 +126,9 @@ footer p {
     margin: 1rem;
 }
 
+button {
+    font-family: var(--heading-font);
+}
 
 @media screen and (min-width: 600px) {
     .courses-view {
