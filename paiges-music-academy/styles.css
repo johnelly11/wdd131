@@ -31,6 +31,56 @@ p {
     margin-bottom: 1rem;
 }
 
+#subheading-box {
+    margin-left: 1rem;
+}
+
+#home-link-container-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+#home-link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    border: 2px solid black;
+    width: 80%;
+
+}
+.link-border {
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    padding: 5%;
+    margin: 5%;
+}
+
+#about-me-container {
+    border: 2px solid black;
+    border-radius: 2rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#about-me-container p {
+    padding: 0 2rem;
+}
+#about-me-container img {
+    padding: 1.5rem 1rem;
+    width: 70%;
+    border-radius: 2rem;
+
+}
+
+#about-me-container-container {
+    display: flex;
+    justify-content: center;
+}
+
 a {
     color: var(--font-color1);
     text-decoration: none;
@@ -48,7 +98,7 @@ hr {
     border: 1px solid var(--color1);
     width: 70%;
 }
-#hr-box {
+.hr-box {
     display: flex;
     justify-content: center;
 }
@@ -130,6 +180,32 @@ button {
     font-family: var(--heading-font);
 }
 
+#feedback {
+    text-align: left;
+    width: 50%;
+    margin-left: 15%;
+    
+}
+
+#name {
+    width: 40%;
+}
+
+#mail {
+    width: 40%;
+}
+
+#msg {
+    height: 5rem;
+    width: 50%;
+    display: flex;
+}
+
+#feedback-container{
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (min-width: 600px) {
     .courses-view {
         margin: 2rem;
@@ -146,11 +222,37 @@ button {
         height: 12rem;
         border-radius: 0.2rem;
     }
-
-
-    .courses-objectives {
-
+    #home-link-container {
+        flex-direction: row;
+        gap: 1rem;
     }
+
+
+    
+    #about-me-container img {
+        float: left;
+        width: 30%;
+        margin-left: 1rem;
+        margin-top: -0.5rem;
+        padding: 0 1rem;
+        padding-top: 1rem;
+        border-radius: 1rem ;
+    
+        
+    }
+    #about-me-container p {
+    
+        
+    }
+    #about-me-container {
+        display: block;
+        padding: 2rem 1rem;
+    }
+    #subheading-box {
+        text-align: center;
+    }
+
+
 
 }
 @media screen and (min-width: 800px) {
@@ -160,6 +262,10 @@ button {
     .courses-view {
         margin: 3rem 9rem;
     }
+    #about-me-container, #home-link-container {
+        margin: 1rem 9rem;
+    }
+    
 
 }
 
@@ -171,5 +277,11 @@ button {
     .courses-view img {
         height: 15rem;
         width: 20rem;
+    }
+    #about-me-container, #home-link-container {
+        margin: 2rem 15rem;
+    }
+    #about-me-container img {
+        width: 10rem;
     }
 }

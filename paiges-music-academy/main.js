@@ -90,7 +90,9 @@ function createCourses(courses) {
     }
   }
 
-createCourses(courses);
+if (window.location.pathname === '/paiges-music-academy/courses.html') {
+    createCourses(courses);
+}
 
 
 
