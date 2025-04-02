@@ -90,6 +90,12 @@ function createCourses(courses) {
     }
   }
 
+if (window.location.pathname === '/wdd131/paiges-music-academy/courses.html') {
+    createCourses(courses);
+}
+if (window.location.pathname === '/courses.html') {
+    createCourses(courses);
+}
 if (window.location.pathname === '/paiges-music-academy/courses.html') {
     createCourses(courses);
 }
